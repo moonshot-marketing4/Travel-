@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>World Wave International Travel and Tours Lodhran — Explore More, Spend Less</title>
+    <meta name="description" content="World Wave International Travel and Tours Lodhran: flights, tours, visas, and holiday packages. Book your next trip with flexible plans, 24/7 support, and best-price deals." />
+    <meta name="theme-color" content="#0ea5e9" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><!-- Basic Reset & Styles -->
+<style>
+  :root{
+    --bg:#0b1220;         /* deep navy */
+    --card:#111a2e;       /* card bg */
+    --muted:#93a3b8;      /* muted text */
+    --text:#e6edf7;       /* main text */
+    --brand:#0ea5e9;      /* sky blue */
+    --brand-2:#22d3ee;    /* cyan accent */
+    --ok:#10b981;         /* green */
+    --warn:#f59e0b;       /* amber */
+    --danger:#ef4444;     /* red */
+    --radius:18px;
+    --shadow:0 10px 30px rgba(14,165,233,.2);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0; padding:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; color:var(--text); background:radial-gradient(1200px 800px at 80% -10%, rgba(34,211,238,.12), transparent), radial-gradient(1000px 700px at 0% 0%, rgba(14,165,233,.15), transparent), var(--bg);} 
+  a{color:inherit; text-decoration:none}
+  img{max-width:100%; display:block}
+  .container{width:min(1180px, 92%); margin-inline:auto}
+  .btn{display:inline-flex; align-items:center; gap:.6rem; background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#051018; border:none; padding:.9rem 1.1rem; font-weight:700; border-radius:14px; box-shadow:var(--shadow); cursor:pointer}
+  .btn.ghost{background:transparent; outline:1px solid rgba(255,255,255,.12); color:var(--text)}
+  .badge{display:inline-flex; align-items:center; gap:.5rem; background:rgba(34,211,238,.12); color:#9ae6ff; border:1px solid rgba(34,211,238,.35); padding:.35rem .6rem; font-size:.8rem; border-radius:999px}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow)}
+  .grid{display:grid; gap:1.2rem}
+
+  /* Nav */
+  nav{position:sticky; top:0; z-index:50; backdrop-filter:blur(10px); background:rgba(11,18,32,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav-wrap{display:flex; align-items:center; justify-content:space-between; padding: .8rem 0}
+  .brand{display:flex; align-items:center; gap:.7rem}
+  .logo{width:40px; height:40px; display:grid; place-items:center; background:linear-gradient(135deg, var(--brand), var(--brand-2)); border-radius:10px; color:#051018; font-weight:900}
+  .nav-links{display:flex; gap:1.1rem; align-items:center}
+  .nav-links a{opacity:.85}
+  .nav-cta{display:flex; gap:.7rem; align-items:center}
+  .hamburger{display:none; background:none; border:none; width:44px; height:44px; border-radius:10px; color:var(--text)}
+
+  /* Hero */
+  header.hero{padding: clamp(3rem, 5vw, 5rem) 0}
+  .hero-wrap{display:grid; grid-template-columns: 1.1fr .9fr; gap:2rem; align-items:center}
+  .title{font-size: clamp(2rem, 3.7vw, 3rem); line-height:1.1; letter-spacing:-.02em; margin:.5rem 0 1rem}
+  .subtitle{font-size: clamp(1rem, 1.3vw, 1.1rem); color:var(--muted)}
+  .hero-img{position:relative; isolation:isolate}
+  .glass{position:absolute; inset:auto 0 0 auto; transform:translate(10% , 10%); width:70%; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.2); backdrop-filter: blur(8px); border-radius:16px; padding:1rem}
+
+  /* Search form */
+  .search{margin-top:1.2rem; display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:.7rem; padding:.8rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:16px}
+  .input{display:flex; flex-direction:column; gap:.35rem}
+  .input label{font-size:.78rem; color:var(--muted)}
+  .input input, .input select{background:#0f192c; color:var(--text); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:.8rem .9rem}
+
+  /* Destinations */
+  section{padding: 3rem 0}
+  .section-title{display:flex; align-items:center; justify-content:space-between; margin-bottom:1.2rem}
+  .section-title h2{margin:0; font-size:1.6rem}
+  .dest-grid{grid-template-columns: repeat(4, 1fr)}
+  .dest-card{position:relative; overflow:hidden}
+  .dest-card img{height:220px; width:100%; object-fit:cover; border-radius:16px}
+  .dest-card .chip{position:absolute; top:10px; left:10px; background:rgba(0,0,0,.45); padding:.35rem .55rem; border-radius:999px; font-size:.8rem}
+
+  /* Packages */
+  .pkg-grid{grid-template-columns: repeat(3, 1fr)}
+  .pkg{display:flex; flex-direction:column}
+  .pkg .thumb{height:180px; border-top-left-radius:16px; border-top-right-radius:16px; object-fit:cover}
+  .pkg .body{padding:1rem}
+  .price{display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-top:.6rem}
+  .price strong{font-size:1.2rem; color:#b2f5ea}
+
+  /* Why Us */
+  .why-grid{grid-template-columns: repeat(4, 1fr)}
+  .why{padding:1rem}
+  .why h4{margin:.6rem 0 .3rem}
+  .why p{margin:.2rem 0; color:var(--muted)}
+
+  /* Testimonials */
+  .testi-grid{grid-template-columns: repeat(3, 1fr)}
+  .quote{padding:1rem}
+  .quote p{color:var(--muted)}
+
+  /* FAQ */
+  .faq-grid{grid-template-columns:1fr 1fr}
+  details{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:1rem}
+  details+details{margin-top:.8rem}
+  summary{cursor:pointer; font-weight:600}
+  details p{color:var(--muted)}
+
+  /* Contact */
+  .contact-wrap{display:grid; grid-template-columns: 1fr 1fr; gap:1.2rem}
+  form.card{padding:1rem}
+  .row{display:grid; grid-template-columns:1fr 1fr; gap:.7rem}
+  textarea{min-height:120px; resize:vertical}
+  input, select, textarea{background:#0f192c; color:var(--text); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:.8rem .9rem; width:100%}
+  label{font-size:.85rem; color:var(--muted)}
+
+  /* Footer */
+  footer{padding:2rem 0; border-top:1px solid rgba(255,255,255,.08); color:var(--muted)}
+
+  /* WhatsApp Floating Button */
+  .wa-float{position:fixed; right:20px; bottom:20px; z-index:60}
+  .wa-float a{display:flex; align-items:center; gap:.5rem; background:#25D366; color:#0b1220; font-weight:800; padding:.9rem 1rem; border-radius:999px; box-shadow:0 10px 20px rgba(0,0,0,.25)}
+
+  /* Responsive */
+  @media (max-width: 980px){
+    .hero-wrap{grid-template-columns:1fr}
+    .search{grid-template-columns:1fr 1fr;}
+    .dest-grid{grid-template-columns: repeat(2, 1fr)}
+    .pkg-grid{grid-template-columns: repeat(2, 1fr)}
+    .why-grid{grid-template-columns: repeat(2, 1fr)}
+    .testi-grid{grid-template-columns:1fr 1fr}
+    .contact-wrap{grid-template-columns:1fr}
+  }
+  @media (max-width: 640px){
+    .nav-links{display:none}
+    .hamburger{display:inline-grid; place-items:center}
+    .search{grid-template-columns:1fr}
+    .dest-grid{grid-template-columns:1fr}
+    .pkg-grid{grid-template-columns:1fr}
+    .why-grid{grid-template-columns:1fr}
+    .testi-grid{grid-template-columns:1fr}
+    .faq-grid{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr}
+  }
+</style>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "World Wave International Travel and Tours Lodhran",
+  "url": "https://your-domain.com",
+  "telephone": "+92-300-0000000",
+  "address": {"@type": "PostalAddress", "addressCountry": "PK"},
+  "sameAs": ["https://facebook.com/yourpage","https://instagram.com/yourpage"]
+}
+</script>
+
+  </head>  <body>
+    <nav>
+      <div class="container nav-wrap">
+        <a class="brand" href="#home">
+          <span class="logo">✈︎</span>
+          <strong>World Wave International Travel</strong>
+        </a>
+        <div class="nav-links">
+          <a href="#destinations">Destinations</a>
+          <a href="#packages">Packages</a>
+          <a href="#why">Why Us</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-cta">
+          <a class="btn ghost" href="#packages">View Deals</a>
+          <a class="btn" href="#contact">Book Free Call</a>
+          <button class="hamburger" aria-label="Toggle menu" onclick="toggleMobileNav()">☰</button>
+        </div>
+      </div>
+    </nav><!-- Mobile menu -->
+<div id="mobileMenu" class="container" style="display:none; padding: .5rem 0 0;">
+  <div class="card" style="padding: .8rem;">
+    <div class="grid" style="grid-template-columns:1fr 1fr; gap:.6rem">
+      <a href="#destinations" onclick="toggleMobileNav()">Destinations</a>
+      <a href="#packages" onclick="toggleMobileNav()">Packages</a>
+      <a href="#why" onclick="toggleMobileNav()">Why Us</a>
+      <a href="#faq" onclick="toggleMobileNav()">FAQ</a>
+      <a href="#contact" onclick="toggleMobileNav()">Contact</a>
+    </div>
+  </div>
+</div>
+
+<header id="home" class="hero">
+  <div class="container hero-wrap">
+    <div>
+      <span class="badge">New deals every week</span>
+      <h1 class="title">Explore More, <span style="color:var(--brand-2)">Spend Less</span> ✈️</h1>
+      <p class="subtitle">We plan unforgettable trips — flights, hotels, visas, and custom tours — with 24/7 support and flexible payment plans.</p>
+
+      <form class="search" onsubmit="event.preventDefault(); handleSearch()">
+        <div class="input">
+          <label for="from">From</label>
+          <input id="from" name="from" placeholder="Karachi (KHI)" required />
+        </div>
+        <div class="input">
+          <label for="to">To</label>
+          <input id="to" name="to" placeholder="Dubai (DXB)" required />
+        </div>
+        <div class="input">
+          <label for="dates">Dates</label>
+          <input id="dates" name="dates" type="text" placeholder="10 Oct – 16 Oct" />
+        </div>
+        <button class="btn" type="submit">Search Deals</button>
+      </form>
+
+      <div style="display:flex; gap:1rem; align-items:center; margin-top:1rem">
+        <div class="badge">✔ Best Price Guarantee</div>
+        <div class="badge" style="background:rgba(16,185,129,.12); border-color:rgba(16,185,129,.35); color:#b7f7db">24/7 Support</div>
+      </div>
+    </div>
+    <div class="hero-img">
+     
+      <div class="glass">
+        <strong>Hot Deal:</strong>
+        <p style="margin:.3rem 0">Karachi → Istanbul, 5 nights from PKR 145,000</p>
+        <small style="color:var(--muted)">Limited seats • Visa assistance available</small>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="destinations">
+  <div class="container">
+    <div class="section-title">
+      <h2>Popular Destinations</h2>
+      <a class="btn ghost" href="#packages">See All Deals</a>
+    </div>
+    <div class="grid dest-grid">
+      <a class="dest-card card" href="#packages">
+        <img src="Dubai.jpeg" alt="Dubai skyline"/>
+        <span class="chip">Dubai</span>
+      </a>
+      <a class="dest-card card" href="#packages">
+        <img src="instabul.jpeg" alt="Istanbul Turkey"/>
+        <span class="chip">Istanbul</span>
+      </a>
+      <a class="dest-card card" href="#packages">
+        <img src="https://images.unsplash.com/photo-1518544801976-3e1b43b5dd42?q=80&w=1200&auto=format&fit=crop" alt="Bali beach"/>
+        <span class="chip">Bali</span>
+      </a>
+      <a class="dest-card card" href="#packages">
+        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?q=80&w=1200&auto=format&fit=crop" alt="Makkah"/>
+        <span class="chip">Umrah</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="packages">
+  <div class="container">
+    <div class="section-title">
+      <h2>Featured Packages</h2>
+      <span style="color:var(--muted)">Customizable • EMI plans available</span>
+    </div>
+    <div class="grid pkg-grid">
+      <article class="pkg card">
+        <img class="thumb" src="https://images.unsplash.com/photo-1544989164-31dc3c645987?q=80&w=1200&auto=format&fit=crop" alt="Dubai Marina"/>
+        <div class="body">
+          <h3>Dubai 5D/4N – City & Desert</h3>
+          <p class="muted">Flights + 4★ hotel + Desert Safari + City Tour</p>
+          <div class="price">
+            <strong>PKR 165,000</strong>
+            <a href="#contact" class="btn">Book Now</a>
+          </div>
+        </div>
+      </article>
+      <article class="pkg card">
+        <img class="thumb" src="https://images.unsplash.com/photo-1512036849132-6455e1f2eae0?q=80&w=1200&auto=format&fit=crop" alt="Istanbul skyline"/>
+        <div class="body">
+          <h3>Turkey 7D/6N – Istanbul & Cappadocia</h3>
+          <p class="muted">Flights + 4★ hotels + Bosphorus + Balloon view</p>
+          <div class="price">
+            <strong>PKR 245,000</strong>
+            <a href="#contact" class="btn">Book Now</a>
+          </div>
+        </div>
+      </article>
+      <article class="pkg card">
+        <img class="thumb" src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1200&auto=format&fit=crop" alt="Kaaba in Makkah"/>
+        <div class="body">
+          <h3>Umrah – 10D/9N</h3>
+          <p class="muted">Direct flights + 3★/4★ hotels near Haram</p>
+          <div class="price">
+            <strong>From PKR 195,000</strong>
+            <a href="#contact" class="btn">Book Now</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="section-title">
+      <h2>Why Choose World Wave International Travel</h2>
+    </div>
+    <div class="grid why-grid">
+      <div class="why card">
+        <div class="badge">Best Price</div>
+        <h4>Transparent Deals</h4>
+        <p>No hidden charges. What you see is what you pay.</p>
+      </div>
+      <div class="why card">
+        <div class="badge">Support</div>
+        <h4>24/7 Assistance</h4>
+        <p>Real humans on WhatsApp & phone anytime.</p>
+      </div>
+      <div class="why card">
+        <div class="badge">Flex</div>
+        <h4>Flexible Payments</h4>
+        <p>EMI & pay-later options on select packages.</p>
+      </div>
+      <div class="why card">
+        <div class="badge">Trust</div>
+        <h4>IATA-Aligned Partners</h4>
+        <p>Work with verified airlines and suppliers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="container">
+    <div class="section-title">
+      <h2>Happy Travelers</h2>
+      <span style="color:var(--muted)">Rated 4.9/5 on social</span>
+    </div>
+    <div class="grid testi-grid">
+      <div class="quote card">
+        <p>“Super smooth visa + best price tickets. Highly recommend Skymate!”</p>
+        <small>— Ayesha, Karachi</small>
+      </div>
+      <div class="quote card">
+        <p>“They customized our Turkey trip perfectly. Great hotels and tours.”</p>
+        <small>— Hamza, Lahore</small>
+      </div>
+      <div class="quote card">
+        <p>“Responsive team on WhatsApp. Booked Umrah for my parents easily.”</p>
+        <small>— Faraz, Islamabad</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-title">
+      <h2>FAQ</h2>
+    </div>
+    <div class="faq-grid">
+      <details>
+        <summary>Do you provide visa assistance?</summary>
+        <p>Yes, we offer guidance and file preparation for many destinations. Approval is subject to embassy policies.</p>
+      </details>
+      <details>
+        <summary>Can I pay in installments?</summary>
+        <p>We support installment plans for select packages through partner providers. Ask our team for eligibility.</p>
+      </details>
+      <details>
+        <summary>What documents are needed to book?</summary>
+        <p>For flights: CNIC/passport. For packages/Umrah: passport, photos, and additional forms as required.</p>
+      </details>
+      <details>
+        <summary>Do you arrange custom trips?</summary>
+        <p>Absolutely. Tell us your budget, dates, and interests — we’ll craft an itinerary just for you.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contact & Booking</h2>
+      <span style="color:var(--muted)">We reply in minutes</span>
+    </div>
+    <div class="contact-wrap">
+      <form class="card" onsubmit="event.preventDefault(); handleContact(this)">
+        <div class="row">
+          <div>
+            <label for="name">Full Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div>
+            <label for="phone">Phone / WhatsApp</label>
+            <input id="phone" name="phone" placeholder="0300 0000000" required />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="service">Service</label>
+            <select id="service" name="service">
+              <option>Flight Ticket</option>
+              <option>Holiday Package</option>
+              <option>Umrah</option>
+              <option>Visa Assistance</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="message">Details</label>
+          <textarea id="message" name="message" placeholder="Dates, budget, travelers, etc."></textarea>
+        </div>
+        <div style="display:flex; gap:.7rem; align-items:center; justify-content:space-between; margin-top:.6rem">
+          <small style="color:var(--muted)">By submitting, you agree to our terms.</small>
+          <button class="btn" type="submit">Request Quote</button>
+        </div>
+      </form>
+
+      <div class="card" style="padding:1rem">
+        <h3 style="margin-top:0">Office</h3>
+        <p style="color:var(--muted)">Suite 12, Business Avenue, Karachi, Pakistan</p>
+        <div class="grid" style="grid-template-columns:1fr 1fr">
+          <div>
+            <h4>Hours</h4>
+            <p class="muted">Mon–Sat: 10:00–19:00
+            <br>Sun: By appointment</p>
+          </div>
+          <div>
+            <h4>Reach Us</h4>
+            <p class="muted">Phone: +92 300 0000000<br>Email: hello@skymatetravel.com</p>
+            <a class="btn" href="https://wa.me/923000000000" target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+        </div>
+        <div style="margin-top:1rem">
+          <iframe title="Map" src="https://maps.google.com/maps?q=Karachi&t=&z=11&ie=UTF8&iwloc=&output=embed" width="100%" height="220" style="border:0; border-radius:16px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap">
+    <div>&copy; <span id="year"></span> World Wave International Travl All rights reserved.</div>
+    <div style="display:flex; gap:1rem">
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="#">Refund Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<div class="wa-float">
+  <a id="waLink" href="https://wa.me/923000000000?text=Hi%20Skymate%20Travel,%20I%20want%20to%20book%20a%20trip!" target="_blank" rel="noopener">💬 WhatsApp</a>
+</div>
+
+<script>
+  // Simple helpers
+  const $ = (s, root=document) => root.querySelector(s);
+
+  function toggleMobileNav(){
+    const m = $('#mobileMenu');
+    m.style.display = m.style.display === 'none' || !m.style.display ? 'blo
